@@ -1,0 +1,13 @@
+adatbázis oldali szkriptek
+Tábla adatfeldolgozáshoz, sqlldr paraméterfile
+
+sar_table.sql
+-------------
+Létrehozza a sar_measurements táblát
+
+load_sar.ctl
+------------
+sqlldr controlfile, mellyel be lehet tölteni a process_sar.rb szkripttel létrehozott kimenetet.
+Példa:
+process_sar.rb -t "h:m:s" -d "Y-m-d" /var/log/sysstat/sar30 > /tmp/out.csv
+sqlldr user/pass@db control=load_sar.ctl data=/tmp/out.csv
