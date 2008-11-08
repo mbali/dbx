@@ -1,0 +1,7 @@
+A backup_sar.sh használatának előfeltételei:
+- A szkript tetszőlegesen átnevezhető
+- Konfigurációs paramétereit egy azonos nevű, de .sh helyett .config kiterjesztésű állományból olvassa fel. (Minta a backup_sar.config.template file-ban)
+- A szkript azon a napon fut, amely napon gyűjtött adatokat fel kell dolgoznia. (Praktikusan cron jobként ütemezve)
+
+A szkript a sa1 általírt bináris állományt is menti az archívumba, hogy későbbi esetleges felmerülő elemzési igénynél olyan riportokat tudjunk előállítani vele, amilyet csak akarunk (feltételezve, hogy az adatgyűjtés gyakorisága/paraméterei ezt lehetővé teszik).
+Emellett a config file-ban megadható, hogy a bináris adatok mellé még milyen riportokat csomagoljunk szöveges formában. Erre amiatt volt szükségünk, mivel az általunk használt számítógépek nem mindegyikén található meg a sysstat csomag, valamint a bináris állomány formátuma is platformfüggő, emiatt pl Solarison készült bináris állományt nem tudunk feldolgozni Linuxon.

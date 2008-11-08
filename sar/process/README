@@ -1,0 +1,14 @@
+sar szöveges állományok feldolgozására szolgáló ruby szkript.
+Célom az volt, hogy sqlldr-rel oracle adatbázisba tölthető állományt állítsak elő. A célnak tökéletesen megfelel egy jól meghatározott elválasztókkal tagolt állomány
+A 'sar' parancs kimeneteként kapott szöveg sajnos nem felel meg eme elvárásnak, kicsit gyúrni kell rajta
+
+process_sar.rb
+Paraméterként kapja a bemeneti file feldolgozásához szükséges információkat.
+
+Használatára pár példa:
+
+Napi adatok kigenerálása:
+sar | process_sar.rb -D ";" > output.csv
+
+Dátum és időformátum megadása
+process_sar.rb -t "h:m:s" -d "Y-m-d" /var/log/sysstat/sar* > output.csv

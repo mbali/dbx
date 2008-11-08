@@ -1,0 +1,32 @@
+#These settings are for my Ubuntu box
+
+#executables
+SAR=/usr/bin/sar
+TAR=/bin/tar
+FIND=/usr/bin/find
+RM=/bin/rm
+DATE=/bin/date
+UNAME=/bin/uname
+
+#switches with which sar reports are created
+SAR_SWITCHES=( q r )
+
+#time interval for report creation
+SAR_START_TIME=09:00:00
+SAR_END_TIME=23:00:00
+
+#output directory where archives will be created
+OUTPUT_DIR=~/admin/sa/
+
+#directory where binary system activity report files are held
+INPUT_DIR=/var/log/sa
+
+#input and output file name suffix date formats
+OUTPUT_DATE_FORMAT="+.%Y_%m_%d"
+INPUT_DATE_FORMAT="+.%Y_%m_%d"
+
+#output filename prefix
+OUTPUT_PREFIX=sar_data_
+
+#archive file keep retention in days
+KEEP_DATA_DAYS=365
